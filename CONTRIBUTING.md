@@ -75,5 +75,18 @@ released from an old maintenance branch never becomes the default install.
 
 ### Required repository configuration
 
-- `NPM_TOKEN` secret with publish rights.
-- GitHub Pages enabled with source set to **GitHub Actions** (for the demo deploy).
+**npm trusted publishing.** There is no publish token. npm authenticates the workflow over
+OIDC, so it must be registered once on npmjs.com under the package's
+Settings → Trusted publishing:
+
+| Field             | Value                    |
+| ----------------- | ------------------------ |
+| Provider          | GitHub Actions           |
+| Organization      | `hieutranse111`          |
+| Repository        | `ckeditor5-build-full`   |
+| Workflow filename | `release.yml`            |
+
+The workflow filename must match exactly — renaming `release.yml` breaks publishing until
+the trusted publisher is updated to match.
+
+**GitHub Pages** enabled with source set to **GitHub Actions**, for the demo deploy.

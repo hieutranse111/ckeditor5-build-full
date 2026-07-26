@@ -57,6 +57,7 @@ jobs:
           echo "tag=$TAG" >> "$GITHUB_OUTPUT"
           echo "Publishing $PKG under dist-tag $TAG (current latest: $LATEST)"
 
-      - run: pnpm publish --no-git-checks --provenance --tag ${{ steps.dist_tag.outputs.tag }}
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # Authenticated by OIDC trusted publishing, which also attaches provenance.
+      # npm rather than pnpm: npm implements OIDC first-party, pnpm only reaches
+      # it by delegating, which broke across a major once.
+      - run: npm publish --tag ${{ steps.dist_tag.outputs.tag }}
