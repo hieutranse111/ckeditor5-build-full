@@ -1,0 +1,36 @@
+name: Version Packages
+
+# Opens or updates a pull request that applies pending changesets: bumps the
+# version and writes CHANGELOG.md. Publishing happens separately, when a
+# GitHub Release is created.
+on:
+  push:
+    branches: [main, 'v[0-9]+']
+  workflow_dispatch:
+
+concurrency: version-${{ github.ref_name }}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - uses: changesets/action@v1
+        with:
+          version: pnpm changeset version
+          title: 'chore: release ${{ github.ref_name }}'
+          commit: 'chore: apply changesets'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

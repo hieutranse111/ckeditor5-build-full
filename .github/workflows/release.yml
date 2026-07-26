@@ -1,0 +1,62 @@
+name: Release
+
+on:
+  release:
+    types: [published]
+
+concurrency: release-${{ github.event.release.tag_name }}
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.release.tag_name }}
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: pnpm
+          registry-url: https://registry.npmjs.org
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Verify tag matches package version
+        run: |
+          TAG="${{ github.event.release.tag_name }}"
+          PKG=$(node -p "require('./package.json').version")
+          if [ "${TAG#v}" != "$PKG" ]; then
+            echo "Tag ${TAG} does not match package.json version ${PKG}." >&2
+            exit 1
+          fi
+
+      - run: pnpm build
+      - run: pnpm typecheck
+      - run: pnpm test
+      - run: pnpm size
+
+      # Publishing an older maintenance line must not steal the `latest` tag,
+      # so only a version higher than the current latest claims it.
+      - name: Resolve dist-tag
+        id: dist_tag
+        run: |
+          NAME=$(node -p "require('./package.json').name")
+          PKG=$(node -p "require('./package.json').version")
+          LATEST=$(npm view "$NAME" version 2>/dev/null || echo "0.0.0")
+          TAG=$(PKG="$PKG" LATEST="$LATEST" node -e "
+            const parse = v => v.split('-')[0].split('.').map(Number);
+            const [a, b] = [parse(process.env.PKG), parse(process.env.LATEST)];
+            const higher = a[0] !== b[0] ? a[0] > b[0] : a[1] !== b[1] ? a[1] > b[1] : a[2] > b[2];
+            process.stdout.write(higher ? 'latest' : 'v' + a[0]);
+          ")
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          echo "Publishing $PKG under dist-tag $TAG (current latest: $LATEST)"
+
+      - run: pnpm publish --no-git-checks --provenance --tag ${{ steps.dist_tag.outputs.tag }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
