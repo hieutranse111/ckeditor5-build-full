@@ -42,6 +42,11 @@ declare module '@ckeditor/ckeditor5-ckfinder/src/ckfinder' {
   export default CKFinder
 }
 
+declare module '@ckeditor/ckeditor5-cloud-services/src/cloudservices' {
+  const CloudServices: import('./ckeditor').PluginConstructor
+  export default CloudServices
+}
+
 declare module '@ckeditor/ckeditor5-easy-image/src/easyimage' {
   const EasyImage: import('./ckeditor').PluginConstructor
   export default EasyImage

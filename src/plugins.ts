@@ -7,6 +7,7 @@ import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold'
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic'
 import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote'
 import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder'
+import CloudServices from '@ckeditor/ckeditor5-cloud-services/src/cloudservices'
 import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage'
 import Heading from '@ckeditor/ckeditor5-heading/src/heading'
 import Image from '@ckeditor/ckeditor5-image/src/image'
@@ -58,6 +59,7 @@ export const builtinPlugins: PluginConstructor[] = [
   Italic,
   BlockQuote,
   CKFinder,
+  CloudServices,
   EasyImage,
   Heading,
   Image,

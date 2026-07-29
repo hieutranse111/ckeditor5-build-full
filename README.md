@@ -2,7 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/ckeditor5-build-full.svg)](https://www.npmjs.com/package/ckeditor5-build-full)
 
-A ready-to-use build of CKEditor 5 Classic Editor with 48 plugins and a preconfigured toolbar.
+A ready-to-use build of CKEditor 5 Classic Editor with 49 plugins and a preconfigured toolbar.
 No bundler configuration, no CSS import — install and use.
 
 ## Installation
@@ -16,14 +16,15 @@ specific line, install it by major:
 
 | Package | CKEditor 5 | npm tag  |
 | ------- | ---------- | -------- |
-| `25.x`  | 25.0.0     | `latest` |
+| `26.x`  | 26.0.0     | `latest` |
+| `25.x`  | 25.0.0     | `v25`    |
 
 ```bash
-npm install ckeditor5-build-full@^25
+npm install ckeditor5-build-full@^26
 ```
 
 > Because the major version is reserved for the CKEditor version, breaking changes to this
-> package ship in **minor** releases. Pin the minor (for example `~25.1.0`) if you need
+> package ship in **minor** releases. Pin the minor (for example `~26.0.0`) if you need
 > strict stability.
 
 ## Usage
