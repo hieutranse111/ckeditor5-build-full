@@ -21,8 +21,8 @@ describe('FullEditor smoke', () => {
     element.remove()
   })
 
-  it('declares exactly 48 builtin plugins', () => {
-    expect(Editor.builtinPlugins).toHaveLength(48)
+  it('declares exactly 49 builtin plugins', () => {
+    expect(Editor.builtinPlugins).toHaveLength(49)
   })
 
   it('initializes from a div', async () => {
