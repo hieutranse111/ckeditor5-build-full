@@ -1,6 +1,6 @@
 {
   "name": "ckeditor5-build-full",
-  "version": "25.1.0",
+  "version": "26.0.0",
   "description": "A ready-to-use build of CKEditor 5 Classic Editor with 48 plugins and a preconfigured toolbar.",
   "license": "GPL-2.0-or-later",
   "packageManager": "pnpm@10.33.0",
