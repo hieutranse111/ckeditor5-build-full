@@ -76,7 +76,8 @@ export const defaultConfig = {
       'tableRow',
       'mergeTableCells',
       'tableProperties',
-      'tableCellProperties'
+      'tableCellProperties',
+      'toggleTableCaption'
     ]
   },
   language: 'en'
