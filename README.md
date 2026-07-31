@@ -2,7 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/ckeditor5-build-full.svg)](https://www.npmjs.com/package/ckeditor5-build-full)
 
-A ready-to-use build of CKEditor 5 Classic Editor with 49 plugins and a preconfigured toolbar.
+A ready-to-use build of CKEditor 5 Classic Editor with 50 plugins and a preconfigured toolbar.
 No bundler configuration, no CSS import — install and use.
 
 ## Installation
@@ -16,15 +16,16 @@ specific line, install it by major:
 
 | Package | CKEditor 5 | npm tag  |
 | ------- | ---------- | -------- |
-| `26.x`  | 26.0.0     | `latest` |
+| `27.x`  | 27.1.0     | `latest` |
+| `26.x`  | 26.0.0     | `v26`    |
 | `25.x`  | 25.0.0     | `v25`    |
 
 ```bash
-npm install ckeditor5-build-full@^26
+npm install ckeditor5-build-full@^27
 ```
 
 > Because the major version is reserved for the CKEditor version, breaking changes to this
-> package ship in **minor** releases. Pin the minor (for example `~26.0.0`) if you need
+> package ship in **minor** releases. Pin the minor (for example `~27.0.0`) if you need
 > strict stability.
 
 ## Usage
@@ -118,13 +119,14 @@ build already bundles its own copy of CKEditor.
 
 ## Included plugins
 
-Alignment, Autoformat, Autosave, BlockQuote, Bold, CKFinder, Clipboard, Code, CodeBlock,
-EasyImage, Essentials, Font, Heading, Highlight, HorizontalLine, HtmlEmbed, Image,
+Alignment, Autoformat, Autosave, BlockQuote, Bold, CKFinder, Clipboard, CloudServices, Code,
+CodeBlock, EasyImage, Essentials, Font, Heading, Highlight, HorizontalLine, HtmlEmbed, Image,
 ImageCaption, ImageResize, ImageStyle, ImageTextAlternative, ImageToolbar, ImageUpload,
 Indent, Italic, Link, List, MediaEmbed, Mention, PageBreak, Paragraph, PasteFromOffice,
 RemoveFormat, SimpleUploadAdapter, SpecialCharacters, SpecialCharactersEssentials,
 StandardEditingMode, Strikethrough, Subscript, Superscript, Table, TableCellProperties,
-TableProperties, TableToolbar, TextTransformation, Underline, UploadAdapter, WordCount
+TableProperties, TableToolbar, TextPartLanguage, TextTransformation, Underline, UploadAdapter,
+WordCount
 
 ## License
 

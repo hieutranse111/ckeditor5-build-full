@@ -24,6 +24,7 @@ export const toolbarItems = [
   'outdent',
   '|',
   'link',
+  'textPartLanguage',
   'insertTable',
   'specialCharacters',
   'uploadImage',
