@@ -51,6 +51,7 @@ import TableProperties from '@ckeditor/ckeditor5-table/src/tableproperties'
 import TableCellProperties from '@ckeditor/ckeditor5-table/src/tablecellproperties'
 import HtmlEmbed from '@ckeditor/ckeditor5-html-embed/src/htmlembed'
 import TextPartLanguage from '@ckeditor/ckeditor5-language/src/textpartlanguage'
+import TableCaption from '@ckeditor/ckeditor5-table/src/tablecaption'
 
 export const builtinPlugins: PluginConstructor[] = [
   Essentials,
@@ -102,5 +103,6 @@ export const builtinPlugins: PluginConstructor[] = [
   TableProperties,
   TableCellProperties,
   HtmlEmbed,
-  TextPartLanguage
+  TextPartLanguage,
+  TableCaption
 ]

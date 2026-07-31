@@ -256,3 +256,8 @@ declare module '@ckeditor/ckeditor5-language/src/textpartlanguage' {
   const TextPartLanguage: import('./ckeditor').PluginConstructor
   export default TextPartLanguage
 }
+
+declare module '@ckeditor/ckeditor5-table/src/tablecaption' {
+  const TableCaption: import('./ckeditor').PluginConstructor
+  export default TableCaption
+}

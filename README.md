@@ -2,7 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/ckeditor5-build-full.svg)](https://www.npmjs.com/package/ckeditor5-build-full)
 
-A ready-to-use build of CKEditor 5 Classic Editor with 50 plugins and a preconfigured toolbar.
+A ready-to-use build of CKEditor 5 Classic Editor with 51 plugins and a preconfigured toolbar.
 No bundler configuration, no CSS import — install and use.
 
 ## Installation
@@ -16,16 +16,17 @@ specific line, install it by major:
 
 | Package | CKEditor 5 | npm tag  |
 | ------- | ---------- | -------- |
-| `27.x`  | 27.1.0     | `latest` |
+| `28.x`  | 28.0.0     | `latest` |
+| `27.x`  | 27.1.0     | `v27`    |
 | `26.x`  | 26.0.0     | `v26`    |
 | `25.x`  | 25.0.0     | `v25`    |
 
 ```bash
-npm install ckeditor5-build-full@^27
+npm install ckeditor5-build-full@^28
 ```
 
 > Because the major version is reserved for the CKEditor version, breaking changes to this
-> package ship in **minor** releases. Pin the minor (for example `~27.0.0`) if you need
+> package ship in **minor** releases. Pin the minor (for example `~28.0.0`) if you need
 > strict stability.
 
 ## Usage
@@ -59,7 +60,7 @@ FullEditor.create(document.querySelector('#editor'))
 ### Browser
 
 ```html
-<script src="https://unpkg.com/ckeditor5-build-full@^25/dist/index.umd.js"></script>
+<script src="https://unpkg.com/ckeditor5-build-full@^28/dist/index.umd.js"></script>
 <script>
   FullEditor.create(document.querySelector('#editor'))
 </script>
@@ -124,9 +125,9 @@ CodeBlock, EasyImage, Essentials, Font, Heading, Highlight, HorizontalLine, Html
 ImageCaption, ImageResize, ImageStyle, ImageTextAlternative, ImageToolbar, ImageUpload,
 Indent, Italic, Link, List, MediaEmbed, Mention, PageBreak, Paragraph, PasteFromOffice,
 RemoveFormat, SimpleUploadAdapter, SpecialCharacters, SpecialCharactersEssentials,
-StandardEditingMode, Strikethrough, Subscript, Superscript, Table, TableCellProperties,
-TableProperties, TableToolbar, TextPartLanguage, TextTransformation, Underline, UploadAdapter,
-WordCount
+StandardEditingMode, Strikethrough, Subscript, Superscript, Table, TableCaption,
+TableCellProperties, TableProperties, TableToolbar, TextPartLanguage, TextTransformation,
+Underline, UploadAdapter, WordCount
 
 ## License
 

@@ -21,8 +21,8 @@ describe('FullEditor smoke', () => {
     element.remove()
   })
 
-  it('declares exactly 50 builtin plugins', () => {
-    expect(Editor.builtinPlugins).toHaveLength(50)
+  it('declares exactly 51 builtin plugins', () => {
+    expect(Editor.builtinPlugins).toHaveLength(51)
   })
 
   it('initializes from a div', async () => {
@@ -38,9 +38,25 @@ describe('FullEditor smoke', () => {
 
   it('loads representative plugins', async () => {
     editor = await Editor.create(element)
-    for (const name of ['Bold', 'Italic', 'Table', 'HtmlEmbed', 'WordCount', 'TextPartLanguage']) {
+    for (const name of [
+      'Bold',
+      'Italic',
+      'Table',
+      'HtmlEmbed',
+      'WordCount',
+      'TextPartLanguage',
+      'TableCaption'
+    ]) {
       expect(editor.plugins.has(name), `missing plugin ${name}`).toBe(true)
     }
+  })
+
+  it('round-trips a table caption', async () => {
+    editor = await Editor.create(element)
+    editor.setData(
+      '<figure class="table"><table><tbody><tr><td>a</td></tr></tbody></table><figcaption>Cap</figcaption></figure>'
+    )
+    expect(editor.getData()).toContain('<figcaption>Cap</figcaption>')
   })
 
   it('injects CSS into the document', async () => {
