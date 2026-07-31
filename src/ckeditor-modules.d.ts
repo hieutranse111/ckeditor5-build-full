@@ -251,3 +251,8 @@ declare module '@ckeditor/ckeditor5-html-embed/src/htmlembed' {
   const HtmlEmbed: import('./ckeditor').PluginConstructor
   export default HtmlEmbed
 }
+
+declare module '@ckeditor/ckeditor5-language/src/textpartlanguage' {
+  const TextPartLanguage: import('./ckeditor').PluginConstructor
+  export default TextPartLanguage
+}

@@ -21,8 +21,8 @@ describe('FullEditor smoke', () => {
     element.remove()
   })
 
-  it('declares exactly 49 builtin plugins', () => {
-    expect(Editor.builtinPlugins).toHaveLength(49)
+  it('declares exactly 50 builtin plugins', () => {
+    expect(Editor.builtinPlugins).toHaveLength(50)
   })
 
   it('initializes from a div', async () => {
@@ -38,7 +38,7 @@ describe('FullEditor smoke', () => {
 
   it('loads representative plugins', async () => {
     editor = await Editor.create(element)
-    for (const name of ['Bold', 'Italic', 'Table', 'HtmlEmbed', 'WordCount']) {
+    for (const name of ['Bold', 'Italic', 'Table', 'HtmlEmbed', 'WordCount', 'TextPartLanguage']) {
       expect(editor.plugins.has(name), `missing plugin ${name}`).toBe(true)
     }
   })

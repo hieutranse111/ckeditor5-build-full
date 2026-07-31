@@ -50,6 +50,7 @@ import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleu
 import TableProperties from '@ckeditor/ckeditor5-table/src/tableproperties'
 import TableCellProperties from '@ckeditor/ckeditor5-table/src/tablecellproperties'
 import HtmlEmbed from '@ckeditor/ckeditor5-html-embed/src/htmlembed'
+import TextPartLanguage from '@ckeditor/ckeditor5-language/src/textpartlanguage'
 
 export const builtinPlugins: PluginConstructor[] = [
   Essentials,
@@ -100,5 +101,6 @@ export const builtinPlugins: PluginConstructor[] = [
   SimpleUploadAdapter,
   TableProperties,
   TableCellProperties,
-  HtmlEmbed
+  HtmlEmbed,
+  TextPartLanguage
 ]
