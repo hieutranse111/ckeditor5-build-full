@@ -1,5 +1,18 @@
 # ckeditor5-build-full
 
+## 27.0.0
+
+### Major Changes
+
+- [#6](https://github.com/hieutranse111/ckeditor5-build-full/pull/6) [`b561522`](https://github.com/hieutranse111/ckeditor5-build-full/commit/b5615225a4fb74c71e3892a95f0ae23091ab6de4) Thanks [@hieutranse111](https://github.com/hieutranse111)! - Upgrade to CKEditor 5 v27 (dependencies pinned to `27.1.0`, the latest v27 patch).
+
+  - All `@ckeditor/ckeditor5-*` dependencies bumped from `26.0.0` to `27.1.0`.
+  - Added `@ckeditor/ckeditor5-language` and included `TextPartLanguage` in `builtinPlugins`,
+    with `textPartLanguage` added to the default toolbar. The build now ships 50 plugins.
+  - No other code changes were required: this repo has no custom listeners on the `delete`,
+    `enter`, or `keydown` view events (affected by v27's new event bubbling) and does not hook
+    into the refactored `Clipboard`/`ClipboardPipeline` internals.
+
 ## 26.0.0
 
 ### Major Changes
