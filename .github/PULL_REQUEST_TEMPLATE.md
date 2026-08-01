@@ -1,7 +1,5 @@
 ## What & why
-
 <!-- What changed, and why — not how (the diff already shows how). -->
-
 
 
 ## Checklist
