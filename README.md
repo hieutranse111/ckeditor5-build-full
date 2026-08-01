@@ -16,17 +16,18 @@ specific line, install it by major:
 
 | Package | CKEditor 5 | npm tag  |
 | ------- | ---------- | -------- |
-| `28.x`  | 28.0.0     | `latest` |
+| `29.x`  | 29.2.0     | `latest` |
+| `28.x`  | 28.0.0     | `v28`    |
 | `27.x`  | 27.1.0     | `v27`    |
 | `26.x`  | 26.0.0     | `v26`    |
 | `25.x`  | 25.0.0     | `v25`    |
 
 ```bash
-npm install ckeditor5-build-full@^28
+npm install ckeditor5-build-full@^29
 ```
 
 > Because the major version is reserved for the CKEditor version, breaking changes to this
-> package ship in **minor** releases. Pin the minor (for example `~28.0.0`) if you need
+> package ship in **minor** releases. Pin the minor (for example `~29.0.0`) if you need
 > strict stability.
 
 ## Usage
@@ -60,7 +61,7 @@ FullEditor.create(document.querySelector('#editor'))
 ### Browser
 
 ```html
-<script src="https://unpkg.com/ckeditor5-build-full@^28/dist/index.umd.js"></script>
+<script src="https://unpkg.com/ckeditor5-build-full@^29/dist/index.umd.js"></script>
 <script>
   FullEditor.create(document.querySelector('#editor'))
 </script>

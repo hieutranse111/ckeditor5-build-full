@@ -3,13 +3,13 @@ import type { toolbarItems } from './config'
 /** Toolbar button name, derived from the default config. */
 export type ToolbarItem = (typeof toolbarItems)[number] | (string & {})
 
-export type ImageStyle = 'full' | 'side' | 'alignLeft' | 'alignCenter' | 'alignRight'
+export type ImageStyle = 'block' | 'side' | 'alignLeft' | 'alignCenter' | 'alignRight'
 
 export interface FullEditorConfig {
   toolbar?: { items: ToolbarItem[] } | ToolbarItem[]
   blockToolbar?: ToolbarItem[]
   fontSize?: { options: (number | string)[] }
-  image?: { toolbar?: string[]; styles?: ImageStyle[] }
+  image?: { toolbar?: string[]; styles?: { options: ImageStyle[] } }
   table?: { contentToolbar?: string[] }
   language?: string
   /** Config for third-party plugins. */

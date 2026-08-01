@@ -63,12 +63,15 @@ export const defaultConfig = {
   image: {
     toolbar: [
       'imageStyle:alignLeft',
-      'imageStyle:full',
+      'imageStyle:block',
       'imageStyle:alignRight',
       '|',
+      'toggleImageCaption',
       'imageTextAlternative'
     ],
-    styles: ['full', 'side', 'alignLeft', 'alignCenter', 'alignRight']
+    styles: {
+      options: ['block', 'side', 'alignLeft', 'alignCenter', 'alignRight']
+    }
   },
   table: {
     contentToolbar: [
