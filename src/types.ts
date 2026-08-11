@@ -12,6 +12,12 @@ export interface FullEditorConfig {
   image?: { toolbar?: string[]; styles?: { options: ImageStyle[] } }
   table?: { contentToolbar?: string[] }
   language?: string
+  /**
+   * Write `getData()` back into the source element when `destroy()` is called.
+   * Defaults to `false` since CKEditor 5 v35 — before that the source element was
+   * always updated. Enabling it re-exposes the data output, which is not sanitized.
+   */
+  updateSourceElementOnDestroy?: boolean
   /** Config for third-party plugins. */
   [key: string]: unknown
 }
