@@ -16,7 +16,8 @@ specific line, install it by major:
 
 | Package | CKEditor 5 | npm tag  |
 | ------- | ---------- | -------- |
-| `34.x`  | 34.2.0     | `latest` |
+| `35.x`  | 35.4.0     | `latest` |
+| `34.x`  | 34.2.0     | `v34`    |
 | `33.x`  | 33.0.0     | `v33`    |
 | `32.x`  | 32.0.0     | `v32`    |
 | `31.x`  | 31.1.0     | `v31`    |
@@ -28,11 +29,11 @@ specific line, install it by major:
 | `25.x`  | 25.0.0     | `v25`    |
 
 ```bash
-npm install ckeditor5-build-full@^34
+npm install ckeditor5-build-full@^35
 ```
 
 > Because the major version is reserved for the CKEditor version, breaking changes to this
-> package ship in **minor** releases. Pin the minor (for example `~34.0.0`) if you need
+> package ship in **minor** releases. Pin the minor (for example `~35.0.0`) if you need
 > strict stability.
 
 ## Usage
@@ -66,7 +67,7 @@ FullEditor.create(document.querySelector('#editor'))
 ### Browser
 
 ```html
-<script src="https://unpkg.com/ckeditor5-build-full@^34/dist/index.umd.js"></script>
+<script src="https://unpkg.com/ckeditor5-build-full@^35/dist/index.umd.js"></script>
 <script>
   FullEditor.create(document.querySelector('#editor'))
 </script>
@@ -114,6 +115,22 @@ are maintained by this package and cover the public surface only — configurati
 editor instance. CKEditor's internal APIs (model, view, conversion) are untyped.
 
 ## Troubleshooting
+
+### The source element is empty after `destroy()`
+
+Since CKEditor 5 v35 (this package's `35.x`), destroying the editor no longer writes
+`getData()` back into the element it was created from — the element is left empty. If you
+relied on that, for example when the editor was created over a `<textarea>` inside a form,
+opt back in:
+
+```js
+FullEditor.create(document.querySelector('#editor'), {
+  updateSourceElementOnDestroy: true
+})
+```
+
+The data output is not sanitized the way the editing view is, so only enable this if you
+control the content that reaches it.
 
 ### `ckeditor-duplicated-modules`
 
